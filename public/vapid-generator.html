@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerar VAPID Keys (Browser)</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(45deg, #7b2ff7, #f107a3);
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    textarea {
+      width: 90%;
+      height: 120px;
+      margin: 10px 0;
+      background: #222;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gerar VAPID Keys</h1>
+  <button onclick="generateVapid()">Gerar VAPID Keys</button>
+
+  <h2>Public Key:</h2>
+  <textarea id="publicKey" readonly></textarea>
+
+  <h2>Private Key:</h2>
+  <textarea id="privateKey" readonly></textarea>
+
+  <script>
+    async function generateVapid() {
+      const keyPair = await window.crypto.subtle.generateKey(
+        {
+          name: "ECDSA",
+          namedCurve: "P-256"
+        },
+        true,
+        ["sign", "verify"]
+      );
+
+      const publicKey = await window.crypto.subtle.exportKey("spki", keyPair.publicKey);
+      const privateKey = await window.crypto.subtle.exportKey("pkcs8", keyPair.privateKey);
+
+      document.getElementById('publicKey').value = arrayBufferToBase64(publicKey);
+      document.getElementById('privateKey').value = arrayBufferToBase64(privateKey);
+    }
+
+    function arrayBufferToBase64(buffer) {
+      let binary = '';
+      const bytes = new Uint8Array(buffer);
+      const len = bytes.byteLength;
+      for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      return btoa(binary);
+    }
+  </script>
+
+</body>
+</html>
