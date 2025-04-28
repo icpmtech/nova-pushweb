@@ -2,10 +2,10 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
-  <title>Push Notification PWA + Netlify</title>
+  <title>Push Notification PWA (Web Push Puro)</title>
   <link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/icon.png" type="image/png">
-<meta name="theme-color" content="#7b2ff7">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <meta name="theme-color" content="#7b2ff7">
   <style>
     body {
       background: #0d0d0d;
@@ -34,7 +34,7 @@
   <button id="notifyBtn">Ativar Notificações</button>
 
   <script>
-    const publicVapidKey = 'BFIKfwEcsb9Uguw0v2z1oOfVgE0lsSOPqkFq66Xz9Vq4W2eO7EK5gGxHDIWYl0QYwRg-M8FcEUNe5IXwx4txZGc';
+    const publicVapidKey = 'BFA3rK2osEArdTWujd9Xss9e7X8OT2LJuGHj9TnVnUQYUpYtlfq-M7qkPUg9OCfWoxgPV6pE8Zpa7AztvT2xZSo';
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js')
