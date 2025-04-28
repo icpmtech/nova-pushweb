@@ -1,11 +1,12 @@
 const webpush = require('web-push');
 
-// VAPID Keys recebidas de ti
+// Nova VAPID keys corretas
 let vapidKeys = {
-  publicKey: 'BHEM8gdvj5BLj28MxPEUdQBp_a1-6Uap1tiks4NOEQyrVpX0lMrUBilSZt5p7WQiXgBbJCas-qaE3QkMJewVduQ',
-  privateKey: 'cnJEgKylEgd-y_BiIMAtb713x6wHGOnwhtFd2-vzrto'
+  publicKey: 'BMUgJ9mU1wvlDHEyZrJMG0IuGdeCJnC7rWtjGYEyQe0TrQbziY9-wNI5E1kR-4bgCLY0yIRVarVWBioq25FzB8I',
+  privateKey: 'Ej_9xQfy_l9tHcUtTxRuaSEe5zhAEhYqvZ9Rijw0VVA'
 };
 
+// Configurar webpush
 webpush.setVapidDetails(
   'mailto:mourao.martins@gmail.com',
   vapidKeys.publicKey,
