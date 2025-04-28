@@ -2,8 +2,8 @@ const webpush = require('web-push');
 
 // As tuas chaves VAPID (já corretas para Chrome/Edge)
 const vapidKeys = {
-  publicKey: 'BKuEzTn7FGrDRUOr5DJKgKnI7c8k0_cvlqDArW-puXLV7o8b8Yne3cGpNh8oz23cIdqjWT2W7CzQMIWhrF9n9wI',
-  privateKey: 'qDBYfBvLdO2x5o4EFl90g7zB7CU5Y92SMcePb8W4Y0Y'
+  publicKey: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX6hprj0NEyYRTwZdWwinNZx7ttiHYoqm5liJSGWfbajbqKXr83nVhurzD7KhC24O4IvzN5w7MGxAPfGy/A7Kig==',
+  privateKey: 'MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgTPlN5WSkK5TajnYrl7wMTHcnKpnSpoXmHXmhcPCLrGGhRANCAARfqGmuPQ0TJhFPBl1bCKc1nHu22IdiiqbmWIlIZZ9tqNuopevzedWG6vMPsqELbg7gi/M3nDswbEA98bL8DsqK'
 };
 
 // Configurar web-push
